@@ -470,7 +470,8 @@ video {
   #treasure-hoard td.legendary,
   #adventurers-map,
   #adventurers-map::before,
-  #adventurers-map::after {
+  #adventurers-map::after,
+  #welcome {
     animation: none;
   }
 
@@ -792,6 +793,63 @@ video {
   font-size: 0.9rem;
 }
 
+/* ---------- Welcome page (welcome.html) ---------- */
+#welcome {
+  position: relative;
+  text-align: center;
+  border: 4px solid transparent;
+  border-radius: 14px;
+  padding: 2.5rem 2rem;
+  background:
+    repeating-linear-gradient(45deg,
+      rgba(255, 255, 255, 0.03) 0 10px,
+      transparent 10px 20px) padding-box,
+    linear-gradient(160deg, #35305a, #1e1b2e) padding-box,
+    linear-gradient(90deg, #f4c542, #8a55c9, #f4c542, #8a55c9, #f4c542) border-box;
+  background-size: auto, auto, 300% 100%;
+  box-shadow: 0 0 25px rgba(138, 85, 201, 0.45);
+  animation: borderShift 8s linear infinite;
+}
+
+#welcome h2 {
+  font-size: 2.4rem;
+  margin-top: 0;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-shadow: 0 0 12px rgba(244, 197, 66, 0.6);
+}
+
+#welcome h2::before {
+  content: "🏰 ";
+}
+
+#welcome h2::after {
+  content: " 🏰";
+}
+
+#welcome p {
+  color: #d8c8f5;
+  font-style: italic;
+}
+
+.welcome-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 2rem;
+  font-style: normal;
+  font-weight: bold;
+  text-decoration: none;
+  color: #1e1b2e;
+  background: linear-gradient(135deg, #f4c542, #ff9f1c);
+  border-radius: 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.welcome-btn:hover {
+  transform: scale(1.1) rotate(-3deg);
+  box-shadow: 0 0 18px rgba(244, 197, 66, 0.8);
+}
+
 /* ---------- Mobile styles ---------- */
 @media (max-width: 600px) {
   body {
@@ -893,5 +951,14 @@ video {
 
   .link-icon {
     font-size: 1.5rem;
+  }
+
+  #welcome {
+    padding: 1.5rem 1rem;
+  }
+
+  #welcome h2 {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
   }
 }
