@@ -24,20 +24,28 @@
     </nav>
   </header>
 
+  <!--Main Section-->
   <main>
     <section id="bards-corner">
       <h2>The Bard's Corner</h2>
       <p>Pull up a chair, order a drink, and set the mood for your next session with some tavern music.</p>
-
-      <img class="banner" src="images/tavern.jpg" alt="A cozy fantasy tavern interior">
-
-      <h3>Now Playing: Tavern Ballad</h3>
-      <audio controls>
-        <source src="audio/tavern-music.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
-      <p class="credit">Music by <a href="https://pixabay.com/users/kaazoom-448850/" target="_blank" rel="noopener noreferrer">kaazoom</a> from <a href="https://pixabay.com" target="_blank" rel="noopener noreferrer">Pixabay</a>.</p>
-
+    
+      <!--Tavern Image-->
+      <figure class="media-figure">
+        <img class="banner" src="images/tavern.jpg" alt="A cozy fantasy tavern interior">
+        <figcaption>The local tavern, where every adventure begins.</figcaption>
+      </figure>
+    
+      <!--Tavern Music-->
+      <div class="player-card">
+        <h3>Now Playing: Tavern Music</h3>
+        <audio controls>
+          <source src="audio/tavern-music.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        <p class="credit">Music by <a href="https://pixabay.com/users/kaazoom-448850/" target="_blank" rel="noopener noreferrer">kaazoom</a> from <a href="https://pixabay.com" target="_blank" rel="noopener noreferrer">Pixabay</a>.</p>
+      </div>
+      
       <!-- Video option: delete the audio block above and use this instead
       <video controls poster="images/tavern.jpg">
         <source src="video/session-trailer.mp4" type="video/mp4">
