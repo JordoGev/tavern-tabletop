@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--
+  Name: Jordan Gevedon
+  File Name: index.html
+  Date: 11/23/2026
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tavern &amp; Tabletop</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header>
+    <h1>Tavern &amp; Tabletop</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="loot.html">Loot</a>
+      <a href="signup.html">Sign Up</a>
+      <a href="media.html">Media</a>
+      <a href="links.html">Links</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="dice-tray">
+      <h2>Roll the Dice</h2>
+      <p>Pick a die and see what fate has in store.</p>
+      <button class="dice" data-sides="4">d4</button>
+      <button class="dice" data-sides="6">d6</button>
+      <button class="dice" data-sides="8">d8</button>
+      <button class="dice" data-sides="10">d10</button>
+      <button class="dice" data-sides="12">d12</button>
+      <button class="dice" data-sides="20">d20</button>
+      <p id="result">Click a die to roll!</p>
+    </section>
+
+    <section id="character-forge">
+      <h2>Build a Character in 5 Steps</h2>
+      <img class="banner" src="images/dice.jpg" alt="A set of polyhedral dice">
+      <ol>
+        <li>Choose a race.</li>
+        <li>Choose a class.</li>
+        <li>Roll your ability scores.</li>
+        <li>Pick your equipment.</li>
+        <li>Give your character a name and backstory.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Jordan Gevedon &bull; Tavern &amp; Tabletop</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="scripts/script.js"></script>
+</body>
+</html>
