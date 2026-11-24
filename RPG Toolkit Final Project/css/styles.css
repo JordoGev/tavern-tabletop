@@ -1,0 +1,897 @@
+/*
+  Name: Jordan Gevedon
+  File Name: styles.css
+  Date: 11/23/2026
+*/
+
+/* ---------- Base elements ---------- */
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  background-color: #1e1b2e;
+  color: #eee;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+  line-height: 1.6;
+}
+
+h1,
+h2 {
+  color: #f4c542;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  font-size: 1.1rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+a {
+  color: #f4c542;
+}
+
+/* ---------- Header, nav, footer ---------- */
+header {
+  border-bottom: 2px solid #6b3fa0;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+nav {
+  text-align: center;
+}
+
+nav a {
+  display: inline-block;
+  margin: 0 0.75rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.2s, color 0.2s;
+}
+
+nav a:hover {
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+footer {
+  border-top: 2px solid #6b3fa0;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* ---------- Banner image ---------- */
+img.banner {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  margin: 1rem 0;
+}
+
+/* ---------- Dice tray section ---------- */
+#dice-tray {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* ---------- Shared fancy panel (forge + hoard) ---------- */
+#character-forge,
+#treasure-hoard {
+  position: relative;
+  border: 4px solid transparent;
+  border-radius: 14px;
+  padding: 1.5rem 2rem 2rem;
+  background:
+    repeating-linear-gradient(45deg,
+      rgba(255, 255, 255, 0.03) 0 10px,
+      transparent 10px 20px) padding-box,
+    linear-gradient(160deg, #35305a, #1e1b2e) padding-box,
+    linear-gradient(90deg, #f4c542, #8a55c9, #f4c542, #8a55c9, #f4c542) border-box;
+  background-size: auto, auto, 300% 100%;
+  box-shadow: 0 0 25px rgba(138, 85, 201, 0.45);
+  animation: borderShift 8s linear infinite;
+}
+
+#character-forge::before,
+#character-forge::after,
+#treasure-hoard::before,
+#treasure-hoard::after {
+  content: "✦";
+  position: absolute;
+  font-size: 1.6rem;
+  color: #f4c542;
+  text-shadow: 0 0 10px #f4c542;
+  animation: twinkle 2.5s ease-in-out infinite;
+}
+
+#character-forge::before,
+#treasure-hoard::before {
+  top: 8px;
+  left: 14px;
+}
+
+#character-forge::after,
+#treasure-hoard::after {
+  bottom: 8px;
+  right: 14px;
+  animation-delay: 1.2s;
+}
+
+#character-forge h2,
+#treasure-hoard h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-top: 0;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-shadow: 0 0 12px rgba(244, 197, 66, 0.6);
+}
+
+#character-forge h2::before {
+  content: "⚔ ";
+}
+
+#character-forge h2::after {
+  content: " ⚔";
+}
+
+#treasure-hoard h2::before {
+  content: "💰 ";
+}
+
+#treasure-hoard h2::after {
+  content: " 💰";
+}
+
+#character-forge p,
+#treasure-hoard p {
+  text-align: center;
+  font-style: italic;
+  color: #d8c8f5;
+}
+
+/* ---------- Character forge section ---------- */
+#character-forge img.banner {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  margin: 1rem auto;
+  border: 3px solid #f4c542;
+  box-shadow: 0 0 18px rgba(244, 197, 66, 0.4);
+  filter: saturate(1.2) contrast(1.05);
+}
+
+#character-forge ol {
+  list-style: none;
+  counter-reset: step;
+  padding-left: 0;
+  max-width: 650px;
+  margin: 1.5rem auto 0;
+}
+
+#character-forge li {
+  counter-increment: step;
+  position: relative;
+  background: linear-gradient(90deg, #3b3468, #1e1b2e);
+  border: 1px solid #6b3fa0;
+  border-radius: 40px 10px 10px 40px;
+  padding: 0.9rem 3.5rem 0.9rem 4.5rem;
+  margin-bottom: 0.9rem;
+  font-size: 1.1rem;
+  opacity: 0;
+  animation: slideIn 0.6s ease forwards;
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+
+#character-forge li:nth-child(1) { animation-delay: 0.1s; }
+#character-forge li:nth-child(2) { animation-delay: 0.3s; }
+#character-forge li:nth-child(3) { animation-delay: 0.5s; }
+#character-forge li:nth-child(4) { animation-delay: 0.7s; }
+#character-forge li:nth-child(5) { animation-delay: 0.9s; }
+
+#character-forge li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0.8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.8rem;
+  height: 3.2rem;
+  line-height: 3.2rem;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #1e1b2e;
+  background: linear-gradient(135deg, #f4c542, #ff9f1c);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+#character-forge li::after {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.6rem;
+}
+
+#character-forge li:nth-child(1)::after { content: "🧝"; }
+#character-forge li:nth-child(2)::after { content: "🛡️"; }
+#character-forge li:nth-child(3)::after { content: "🎲"; }
+#character-forge li:nth-child(4)::after { content: "🗡️"; }
+#character-forge li:nth-child(5)::after { content: "📜"; }
+
+#character-forge li:hover {
+  transform: translateX(10px) scale(1.02);
+  border-color: #f4c542;
+  box-shadow: 0 0 16px rgba(244, 197, 66, 0.55);
+}
+
+/* ---------- Lists (general) ---------- */
+ol {
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.4rem;
+}
+
+/* ---------- Dice buttons (advanced CSS: transition + transform) ---------- */
+button {
+  background: linear-gradient(135deg, #6b3fa0, #8a55c9);
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1rem;
+  margin: 0.25rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: scale(1.1) rotate(-3deg);
+  box-shadow: 0 4px 12px rgba(244, 197, 66, 0.5);
+}
+
+#result {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #f4c542;
+}
+
+/* ---------- Table (general) ---------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+th,
+td {
+  border: 1px solid #6b3fa0;
+  padding: 0.6rem;
+  text-align: left;
+}
+
+th {
+  background-color: #6b3fa0;
+  color: #fff;
+}
+
+tr:nth-child(even) {
+  background-color: #2a2640;
+}
+
+/* ---------- Treasure hoard table (loot.html) ---------- */
+#treasure-hoard table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 2px solid #6b3fa0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 1.5rem 0 0;
+}
+
+#treasure-hoard caption {
+  caption-side: top;
+  color: #f4c542;
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding-bottom: 0.75rem;
+}
+
+#treasure-hoard th,
+#treasure-hoard td {
+  border: none;
+  border-bottom: 1px solid rgba(107, 63, 160, 0.5);
+  padding: 0.8rem 1rem;
+}
+
+#treasure-hoard th {
+  background: linear-gradient(135deg, #f4c542, #ff9f1c);
+  color: #1e1b2e;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.95rem;
+}
+
+#treasure-hoard tbody tr {
+  background-color: rgba(30, 27, 46, 0.7);
+  transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+}
+
+#treasure-hoard tbody tr:nth-child(even) {
+  background-color: rgba(59, 52, 104, 0.6);
+}
+
+#treasure-hoard tbody tr:hover {
+  background-color: #4a3f85;
+  transform: scale(1.02);
+  box-shadow: 0 0 16px rgba(244, 197, 66, 0.5);
+  position: relative;
+  z-index: 1;
+}
+
+#treasure-hoard tbody tr:last-child td {
+  border-bottom: none;
+}
+
+#treasure-hoard td:first-child {
+  color: #f4c542;
+  font-weight: bold;
+}
+
+/* rarity colors */
+#treasure-hoard td.common {
+  color: #b8b8c8;
+}
+
+#treasure-hoard td.uncommon {
+  color: #5fe07a;
+  font-weight: bold;
+}
+
+#treasure-hoard td.rare {
+  color: #5aa9ff;
+  font-weight: bold;
+  text-shadow: 0 0 8px rgba(90, 169, 255, 0.6);
+}
+
+#treasure-hoard td.very-rare {
+  color: #c77dff;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(199, 125, 255, 0.7);
+}
+
+#treasure-hoard td.legendary {
+  font-weight: bold;
+  background: linear-gradient(90deg, #f4c542, #fff3b0, #ff9f1c, #f4c542);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #f4c542;
+  animation: shimmer 3s linear infinite;
+}
+
+/* ---------- Form (signup.html) ---------- */
+form {
+  background-color: #2a2640;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+label {
+  display: block;
+  margin: 0.75rem 0 0.25rem;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #6b3fa0;
+  border-radius: 4px;
+  background-color: #1e1b2e;
+  color: #eee;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: 0.4rem;
+}
+
+fieldset {
+  border: 1px solid #6b3fa0;
+  border-radius: 6px;
+  margin: 1rem 0;
+}
+
+legend {
+  color: #f4c542;
+  padding: 0 0.5rem;
+}
+
+/* ---------- Media (media.html) ---------- */
+audio,
+video {
+  display: block;
+  width: 100%;
+  margin: 1rem 0;
+  border-radius: 8px;
+}
+
+/* ---------- Animations (advanced CSS: @keyframes) ---------- */
+@keyframes borderShift {
+  from { background-position: 0 0, 0 0, 0% 0; }
+  to   { background-position: 0 0, 0 0, 300% 0; }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(0.8) rotate(0deg); }
+  50%      { opacity: 1;   transform: scale(1.2) rotate(20deg); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes shimmer {
+  from { background-position: 0% 0; }
+  to   { background-position: 300% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #character-forge,
+  #character-forge::before,
+  #character-forge::after,
+  #treasure-hoard,
+  #treasure-hoard::before,
+  #treasure-hoard::after,
+  #treasure-hoard td.legendary,
+  #adventurers-map,
+  #adventurers-map::before,
+  #adventurers-map::after {
+    animation: none;
+  }
+
+  #character-forge li {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+/* ---------- Guild registry (signup.html) ---------- */
+#guild-registry {
+  position: relative;
+  border: 4px solid transparent;
+  border-radius: 14px;
+  padding: 1.5rem 2rem 2rem;
+  background:
+    repeating-linear-gradient(45deg,
+      rgba(255, 255, 255, 0.03) 0 10px,
+      transparent 10px 20px) padding-box,
+    linear-gradient(160deg, #35305a, #1e1b2e) padding-box,
+    linear-gradient(90deg, #f4c542, #8a55c9, #f4c542, #8a55c9, #f4c542) border-box;
+  background-size: auto, auto, 300% 100%;
+  box-shadow: 0 0 25px rgba(138, 85, 201, 0.45);
+  animation: borderShift 8s linear infinite;
+}
+
+#guild-registry::before,
+#guild-registry::after {
+  content: "✦";
+  position: absolute;
+  font-size: 1.6rem;
+  color: #f4c542;
+  text-shadow: 0 0 10px #f4c542;
+  animation: twinkle 2.5s ease-in-out infinite;
+}
+
+#guild-registry::before {
+  top: 8px;
+  left: 14px;
+}
+
+#guild-registry::after {
+  bottom: 8px;
+  right: 14px;
+  animation-delay: 1.2s;
+}
+
+#guild-registry h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-top: 0;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-shadow: 0 0 12px rgba(244, 197, 66, 0.6);
+}
+
+#guild-registry h2::before {
+  content: "📜 ";
+}
+
+#guild-registry h2::after {
+  content: " 📜";
+}
+
+#guild-registry > p {
+  text-align: center;
+  font-style: italic;
+  color: #d8c8f5;
+}
+
+#guild-registry form {
+  max-width: 550px;
+  margin: 1.5rem auto 0;
+  background-color: rgba(30, 27, 46, 0.6);
+  border: 1px solid #6b3fa0;
+}
+
+#guild-registry label {
+  color: #f4c542;
+  font-weight: bold;
+}
+
+#guild-registry fieldset label {
+  color: #eee;
+  font-weight: normal;
+  cursor: pointer;
+  transition: color 0.2s, transform 0.2s;
+}
+
+#guild-registry fieldset label:hover {
+  color: #f4c542;
+  transform: translateX(6px);
+}
+
+#guild-registry input[type="text"]:focus,
+#guild-registry select:focus {
+  outline: none;
+  border-color: #f4c542;
+  box-shadow: 0 0 10px rgba(244, 197, 66, 0.6);
+}
+
+#guild-registry input[type="radio"],
+#guild-registry input[type="checkbox"] {
+  accent-color: #f4c542;
+}
+
+#guild-registry .submit-btn {
+  display: block;
+  margin: 1.5rem auto 0;
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  background: linear-gradient(135deg, #f4c542, #ff9f1c);
+  color: #1e1b2e;
+}
+
+#guild-registry .submit-btn:hover {
+  box-shadow: 0 0 18px rgba(244, 197, 66, 0.8);
+}
+
+/* ---------- Bard's corner (media.html) ---------- */
+#bards-corner {
+  position: relative;
+  border: 4px solid transparent;
+  border-radius: 14px;
+  padding: 1.5rem 2rem 2rem;
+  background:
+    repeating-linear-gradient(45deg,
+      rgba(255, 255, 255, 0.03) 0 10px,
+      transparent 10px 20px) padding-box,
+    linear-gradient(160deg, #35305a, #1e1b2e) padding-box,
+    linear-gradient(90deg, #f4c542, #8a55c9, #f4c542, #8a55c9, #f4c542) border-box;
+  background-size: auto, auto, 300% 100%;
+  box-shadow: 0 0 25px rgba(138, 85, 201, 0.45);
+  animation: borderShift 8s linear infinite;
+}
+
+#bards-corner::before,
+#bards-corner::after {
+  content: "✦";
+  position: absolute;
+  font-size: 1.6rem;
+  color: #f4c542;
+  text-shadow: 0 0 10px #f4c542;
+  animation: twinkle 2.5s ease-in-out infinite;
+}
+
+#bards-corner::before {
+  top: 8px;
+  left: 14px;
+}
+
+#bards-corner::after {
+  bottom: 8px;
+  right: 14px;
+  animation-delay: 1.2s;
+}
+
+#bards-corner h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-top: 0;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-shadow: 0 0 12px rgba(244, 197, 66, 0.6);
+}
+
+#bards-corner h2::before {
+  content: "🎵 ";
+}
+
+#bards-corner h2::after {
+  content: " 🎵";
+}
+
+#bards-corner > p {
+  text-align: center;
+  font-style: italic;
+  color: #d8c8f5;
+}
+
+#bards-corner h3 {
+  text-align: center;
+  color: #f4c542;
+  margin-bottom: 0;
+}
+
+#bards-corner img.banner {
+  box-sizing: border-box;
+  border: 3px solid #f4c542;
+  box-shadow: 0 0 18px rgba(244, 197, 66, 0.4);
+}
+
+#bards-corner audio,
+#bards-corner video {
+  max-width: 600px;
+  margin: 1rem auto;
+  box-shadow: 0 0 16px rgba(138, 85, 201, 0.6);
+}
+
+#bards-corner .credit {
+  font-size: 0.9rem;
+}
+
+/* ---------- Adventurer's map (links.html) ---------- */
+#adventurers-map {
+  position: relative;
+  border: 4px solid transparent;
+  border-radius: 14px;
+  padding: 1.5rem 2rem 2rem;
+  background:
+    repeating-linear-gradient(45deg,
+      rgba(255, 255, 255, 0.03) 0 10px,
+      transparent 10px 20px) padding-box,
+    linear-gradient(160deg, #35305a, #1e1b2e) padding-box,
+    linear-gradient(90deg, #f4c542, #8a55c9, #f4c542, #8a55c9, #f4c542) border-box;
+  background-size: auto, auto, 300% 100%;
+  box-shadow: 0 0 25px rgba(138, 85, 201, 0.45);
+  animation: borderShift 8s linear infinite;
+}
+
+#adventurers-map::before,
+#adventurers-map::after {
+  content: "✦";
+  position: absolute;
+  font-size: 1.6rem;
+  color: #f4c542;
+  text-shadow: 0 0 10px #f4c542;
+  animation: twinkle 2.5s ease-in-out infinite;
+}
+
+#adventurers-map::before {
+  top: 8px;
+  left: 14px;
+}
+
+#adventurers-map::after {
+  bottom: 8px;
+  right: 14px;
+  animation-delay: 1.2s;
+}
+
+#adventurers-map h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-top: 0;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-shadow: 0 0 12px rgba(244, 197, 66, 0.6);
+}
+
+#adventurers-map h2::before {
+  content: "🧭 ";
+}
+
+#adventurers-map h2::after {
+  content: " 🧭";
+}
+
+#adventurers-map > p {
+  text-align: center;
+  font-style: italic;
+  color: #d8c8f5;
+}
+
+.link-list {
+  list-style: none;
+  padding: 0;
+  max-width: 650px;
+  margin: 1.5rem auto 0;
+}
+
+.link-list li {
+  margin-bottom: 0.9rem;
+}
+
+.link-list a {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 1.25rem;
+  text-decoration: none;
+  color: #eee;
+  background: linear-gradient(90deg, #3b3468, #1e1b2e);
+  border: 1px solid #6b3fa0;
+  border-left: 5px solid #f4c542;
+  border-radius: 10px;
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+
+.link-list a:hover {
+  transform: translateX(10px) scale(1.02);
+  border-color: #f4c542;
+  box-shadow: 0 0 16px rgba(244, 197, 66, 0.55);
+}
+
+.link-icon {
+  font-size: 2rem;
+  transition: transform 0.25s;
+}
+
+.link-list a:hover .link-icon {
+  transform: rotate(-12deg) scale(1.2);
+}
+
+.link-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.link-text strong {
+  color: #f4c542;
+  font-size: 1.15rem;
+}
+
+.link-text small {
+  color: #d8c8f5;
+  font-size: 0.9rem;
+}
+
+/* ---------- Mobile styles ---------- */
+@media (max-width: 600px) {
+  body {
+    font-size: 0.95rem;
+    padding: 0.75rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  nav a {
+    display: block;
+    margin: 0.5rem 0;
+  }
+
+  button {
+    width: 30%;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  img.banner {
+    height: 180px;
+  }
+
+  #character-forge,
+  #treasure-hoard {
+    padding: 1rem 1rem 1.5rem;
+  }
+
+  #character-forge h2,
+  #treasure-hoard h2 {
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+  }
+
+  #character-forge li {
+    padding: 0.8rem 2.8rem 0.8rem 3.8rem;
+    font-size: 1rem;
+  }
+
+  #character-forge li::before {
+    width: 2.3rem;
+    height: 2.7rem;
+    line-height: 2.7rem;
+    font-size: 1.1rem;
+  }
+
+  #character-forge li::after {
+    font-size: 1.2rem;
+    right: 0.6rem;
+  }
+
+  #treasure-hoard th,
+  #treasure-hoard td {
+    padding: 0.6rem 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  #guild-registry {
+    padding: 1rem 1rem 1.5rem;
+  }
+
+  #guild-registry h2 {
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+  }
+
+  #guild-registry .submit-btn {
+    width: auto;
+  }
+
+  #bards-corner {
+    padding: 1rem 1rem 1.5rem;
+  }
+
+  #bards-corner h2 {
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+  }
+
+    #adventurers-map {
+    padding: 1rem 1rem 1.5rem;
+  }
+
+  #adventurers-map h2 {
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+  }
+
+  .link-list a {
+    padding: 0.7rem 0.9rem;
+    gap: 0.75rem;
+  }
+
+  .link-icon {
+    font-size: 1.5rem;
+  }
+}
