@@ -439,7 +439,7 @@ video {
   border-radius: 8px;
 }
 
-/* ---------- Animations (advanced CSS: @keyframes) ---------- */
+/* ---------- Animations (Advanced CSS: @keyframes) ---------- */
 @keyframes borderShift {
   from { background-position: 0 0, 0 0, 0% 0; }
   to   { background-position: 0 0, 0 0, 300% 0; }
