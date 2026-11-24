@@ -24,22 +24,32 @@
     </nav>
   </header>
 
+  <!--Main section-->
   <main>
+    <!--Dice-->
     <section id="dice-tray">
       <h2>Roll the Dice</h2>
       <p>Pick a die and see what fate has in store.</p>
-      <button class="dice" data-sides="4">d4</button>
-      <button class="dice" data-sides="6">d6</button>
-      <button class="dice" data-sides="8">d8</button>
-      <button class="dice" data-sides="10">d10</button>
-      <button class="dice" data-sides="12">d12</button>
-      <button class="dice" data-sides="20">d20</button>
-      <p id="result">Click a die to roll!</p>
+      <div id="result-box">
+        <button class="dice" data-sides="4">d4</button>
+        <button class="dice" data-sides="6">d6</button>
+        <button class="dice" data-sides="8">d8</button>
+        <button class="dice" data-sides="10">d10</button>
+        <button class="dice" data-sides="12">d12</button>
+        <button class="dice" data-sides="20">d20</button>
+      </div>
+      <div id="result-box>
+        <p id="result">Click a die to roll!</p>
+      </div>
     </section>
-
+    <!--Character Builder-->
     <section id="character-forge">
-      <h2>Build a Character in 5 Steps</h2>
-      <img class="banner" src="images/dice.jpg" alt="A set of polyhedral dice">
+      <h2>The Character Forge</h2>
+      <figure>
+        <img class="banner" src="images/dice.jpg" alt="A set of polyhedral dice">
+        <figcaption>A fresh set of dice, ready for adventure.</figcaption>
+      </figure>
+      <p>Every hero starts somewhere. Follow these five steps to begin your journey.</p>
       <ol>
         <li>Choose a race.</li>
         <li>Choose a class.</li>
@@ -47,6 +57,9 @@
         <li>Pick your equipment.</li>
         <li>Give your character a name and backstory.</li>
       </ol>
+      <aside class"tip-box">
+        <strong>Beginner's Tip:</strong> Not sure where to start? Roll a d20 for each step and let fate decide.
+      </aside>
     </section>
   </main>
 
