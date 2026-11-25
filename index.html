@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--
+  Name: Jordan Gevedon
+  File Name: index.html
+  Date: 11/24/2026
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tavern &amp; Tabletop</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!--Header-->
+    <header>
+      <h1>Tavern &amp; Tabletop</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="character.html">Sheet</a>
+        <a href="signup.html">Sign Up</a>
+        <a href="media.html">Media</a>
+        <a href="links.html">Links</a>
+      </nav>
+    </header>
+
+    <!--Main Section-->
+    <main>
+      <section id="dice-tray">
+        <!--Dice Roller-->
+        <h2>Roll the Dice</h2>
+        <p>Pick a die and see what fate has in store.</p>
+        <div class="dice-row">
+          <button class="dice" data-sides="4">d4</button>
+          <button class="dice" data-sides="6">d6</button>
+          <button class="dice" data-sides="8">d8</button>
+          <button class="dice" data-sides="10">d10</button>
+          <button class="dice" data-sides="12">d12</button>
+          <button class="dice" data-sides="20">d20</button>
+        </div>
+        <div id="result-box">
+          <p id="result">Click a die to roll!</p>
+        </div>
+      </section>
+
+      <!--Initiative Tracker-->
+      <section id="initiative-tracker">
+        <h2>The Initiative Tracker</h2>
+        <figure>
+          <img class="banner" src="images/dice.jpg" alt="A set of polyhedral dice">
+          <figcaption>A fresh set of dice, ready for adventure.</figcaption>
+        </figure>
+        <p>Add your party and the monsters, then step through the turns. Leave initiative blank to roll a d20 for them.</p>
+        <div class="tool-row">
+          <input type="text" id="init-name" placeholder="Name" aria-label="Combatant name">
+          <input type="number" id="init-value" min="-5" max="40" placeholder="Initiative" aria-label="Initiative score">
+          <button id="add-combatant">Add</button>
+        </div>
+        <div class="tool-row">
+          <button id="roll-initiative">Roll Everyone</button>
+          <button id="next-turn">Next Turn</button>
+        </div>
+        <p id="turn-message"></p>
+        <ol id="initiative-list">
+          
+        </ol>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Jordan Gevedon &bull; Tavern &amp; Tabletop</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="scripts/script.js"></script>
+</body>
+</html>

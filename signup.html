@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--
+  Name: Jordan Gevedon
+  File Name: signup.html
+  Date: 11/24/2026
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up | Tavern &amp; Tabletop</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!--Header-->
+    <header>
+      <h1>Tavern &amp; Tabletop</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="character.html">Sheet</a>
+        <a href="signup.html">Sign Up</a>
+        <a href="media.html">Media</a>
+        <a href="links.html">Links</a>
+      </nav>
+    </header>
+
+    <!--Main Section-->
+    <main>
+      <section id="guild-registry">
+        <h2>The Guild Registry</h2>
+        <p>Ready to join the next adventure? Fill out your character sheet and the guild will be in touch.</p>
+
+        <!--Form-->
+        <form action="welcome.html" method="get">
+
+          <div class="form-group">
+            <label for="char-name">Character Name</label>
+            <input type="text" id="char-name" name="char_name" placeholder="e.g., Thorin Ironbeard" required>
+          </div>
+            
+          <fieldset>
+              <legend>Your Role at the Table</legend>
+            <label for="role-player">
+              <input type="radio" id="role-player" name="role" value="player" checked>
+              Player
+            </label>
+            <label for="role-dm">
+              <input type="radio" id="role-dm" name="role" value="dungeon-master">
+              Dungeon Master
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>What Do You Enjoy Most?</legend>
+            <label for="enjoy-combat">
+              <input type="checkbox" id="enjoy-combat" name="enjoy" value="combat">
+              Epic Combat
+            </label>
+            <label for="enjoy-roleplay">
+              <input type="checkbox" id="enjoy-roleplay" name="enjoy" value="roleplay">
+              Roleplaying and Storytelling
+            </label>
+          </fieldset>
+
+          <div class="form-group">
+            <label for="char-class">Choose Your Class</label>
+            <select id="char-class" name="char_class">
+              <option value="">-- Select a class --</option>
+              <option value="barbarian">Barbarian</option>
+              <option value="bard">Bard</option>
+              <option value="cleric">Cleric</option>
+              <option value="druid">Druid</option>
+              <option value="fighter">Fighter</option>
+              <option value="paladin">Paladin</option>
+              <option value="ranger">Ranger</option>
+              <option value="rogue">Rogue</option>
+              <option value="wizard">Wizard</option>
+            </select>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="submit-btn">Join the Guild</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <!--Footer-->
+    <footer>
+      <p>&copy; 2026 Jordan Gevedon &bull; Tavern &amp; Tabletop</p>
+    </footer>
+
+</body>
+</html>
