@@ -4,7 +4,7 @@
   Date: 11/23/2026
 */
 
-/* ---------- Base elements ---------- */
+/* Base elements */
 body {
   font-family: Georgia, "Times New Roman", serif;
   background-color: #1e1b2e;
@@ -40,7 +40,7 @@ a {
   color: #f4c542;
 }
 
-/* ---------- Header, nav, footer ---------- */
+/* Header, nav, footer */
 header {
   border-bottom: 2px solid #6b3fa0;
   padding-bottom: 1rem;
@@ -72,7 +72,7 @@ footer {
   font-size: 0.9rem;
 }
 
-/* ---------- Banner image ---------- */
+/* Banner image */
 img.banner {
   width: 100%;
   height: 300px;
@@ -81,13 +81,13 @@ img.banner {
   margin: 1rem 0;
 }
 
-/* ---------- Dice tray section ---------- */
+/* Dice tray section */
 #dice-tray {
   text-align: center;
   margin-bottom: 2rem;
 }
 
-/* ---------- Shared fancy panel (forge + hoard) ---------- */
+/* Shared fancy panel (forge + hoard) */
 #character-forge,
 #treasure-hoard {
   position: relative;
@@ -163,7 +163,7 @@ img.banner {
   color: #d8c8f5;
 }
 
-/* ---------- Character forge section ---------- */
+/* Character forge section */
 #character-forge img.banner {
   box-sizing: border-box;
   width: 100%;
@@ -239,7 +239,7 @@ img.banner {
   box-shadow: 0 0 16px rgba(244, 197, 66, 0.55);
 }
 
-/* ---------- Lists (general) ---------- */
+/* Lists (general) */
 ol {
   padding-left: 1.5rem;
 }
@@ -248,7 +248,7 @@ li {
   margin-bottom: 0.4rem;
 }
 
-/* ---------- Dice buttons (advanced CSS: transition + transform) ---------- */
+/* Dice buttons (advanced CSS: transition + transform) */
 button {
   background: linear-gradient(135deg, #6b3fa0, #8a55c9);
   color: #fff;
@@ -272,7 +272,7 @@ button:hover {
   color: #f4c542;
 }
 
-/* ---------- Table (general) ---------- */
+/* Table (general) */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -295,7 +295,7 @@ tr:nth-child(even) {
   background-color: #2a2640;
 }
 
-/* ---------- Treasure hoard table (loot.html) ---------- */
+/* Treasure hoard table (loot.html) */
 #treasure-hoard table {
   border-collapse: separate;
   border-spacing: 0;
@@ -388,7 +388,7 @@ tr:nth-child(even) {
   animation: shimmer 3s linear infinite;
 }
 
-/* ---------- Form (signup.html) ---------- */
+/* Form (signup.html) */
 form {
   background-color: #2a2640;
   padding: 1.5rem;
@@ -430,7 +430,7 @@ legend {
   padding: 0 0.5rem;
 }
 
-/* ---------- Media (media.html) ---------- */
+/* Media (media.html) */
 audio,
 video {
   display: block;
@@ -439,7 +439,7 @@ video {
   border-radius: 8px;
 }
 
-/* ---------- Animations (Advanced CSS: @keyframes) ---------- */
+/* >>>>>Animations (Advanced CSS: @keyframes)<<<<< */
 @keyframes borderShift {
   from { background-position: 0 0, 0 0, 0% 0; }
   to   { background-position: 0 0, 0 0, 300% 0; }
@@ -481,7 +481,7 @@ video {
   }
 }
 
-/* ---------- Guild registry (signup.html) ---------- */
+/* Guild registry (signup.html) */
 #guild-registry {
   position: relative;
   border: 4px solid transparent;
@@ -593,7 +593,7 @@ video {
   box-shadow: 0 0 18px rgba(244, 197, 66, 0.8);
 }
 
-/* ---------- Bard's corner (media.html) ---------- */
+/* Bard's corner (media.html) */
 #bards-corner {
   position: relative;
   border: 4px solid transparent;
@@ -677,7 +677,7 @@ video {
   font-size: 0.9rem;
 }
 
-/* ---------- Adventurer's map (links.html) ---------- */
+/* Adventurer's map (links.html) */
 #adventurers-map {
   position: relative;
   border: 4px solid transparent;
@@ -793,7 +793,7 @@ video {
   font-size: 0.9rem;
 }
 
-/* ---------- Welcome page (welcome.html) ---------- */
+/* Welcome page (welcome.html) */
 #welcome {
   position: relative;
   text-align: center;
@@ -850,7 +850,7 @@ video {
   box-shadow: 0 0 18px rgba(244, 197, 66, 0.8);
 }
 
-/* ---------- Divs, figures, and asides ---------- */
+/* Divs, figures, and asides */
 .dice-row {
   display: flex;
   flex-wrap: wrap;
@@ -863,7 +863,7 @@ video {
   margin: 1rem auto 0;
   padding: 0.5rem 1rem;
   background-color: rgba(30, 27, 56, 0.7);
-  boarder: 2px dashed #6b3fa0;
+  border: 2px dashed #6b3fa0;
   border-radius: 10px;
 }
 
@@ -877,10 +877,12 @@ figure {
   padding: 0.9rem 1.25rem;
   background-color: rgba(244, 197, 66, 0.1);
   border-left: 5px solid #f4c542;
-  border radius: 6px;
+  border-radius: 6px;
+}
 
 .tip-box strong {
   color: #f4c542;
+}
 
 .table-wrap {
   overflow-x: auto;
@@ -900,8 +902,9 @@ figure {
   background-color: rgba(30, 27, 46, 0.6);
   border: 1px solid #6b3fa0;
   border-radius: 12px;
+}
 
-/* ---------- Mobile styles ---------- */
+/* Mobile styles */
 @media (max-width: 600px) {
   body {
     font-size: 0.95rem;
